@@ -1,175 +1,247 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Sania Ka Dhaba 👑</title>
-    <style>
-        body {
-            background-color: #8A2BE2;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-        }
-        h1 {
-            font-size: 40px;
-            margin-bottom: 5px;
-        }
-        .tagline {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
-        button {
-            background-color: #FFD700;
-            color: #8A2BE2;
-            border: none;
-            padding: 15px 30px;
-            font-size: 20px;
-            border-radius: 10px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        #menu-list {
-            display: none;
-            background-color: #FFF8DC;
-            color: black;
-            width: 350px;
-            margin: 20px auto;
-            padding: 20px;
-            border-radius: 15px;
-            text-align: left;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-        .menu-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 10px;
-        }
-        .menu-item img {
-            width: 60px;
-            height: 60px;
-            border-radius: 10px;
-            margin-right: 15px;
-            object-fit: cover;
-        }
-        .menu-item p {
-            margin: 0;
-            font-size: 16px;
-            font-weight: bold;
-        }
-        .price {
-            color: #8A2BE2;
-            font-size: 14px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trendify - Kurtis & Cosmetics Sale</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+body { background: #f9f9f9; }
+
+header {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("banner.jpg");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+header h1 { font-size: 52px; text-shadow: 2px 2px 12px rgba(0,0,0,0.7); }
+header h2 { font-size: 36px; color: #ffeb3b; margin: 10px 0; }
+
+.section-banner {
+    background-size: cover;
+    background-position: center;
+    padding: 70px 20px;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+}
+.kurtis-banner { background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url("kurtis-banner.jpg"); }
+.cosmetics-banner { background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url("cosmetics-banner.jpg"); }
+.section-banner h2 { font-size: 40px; margin-bottom: 15px; }
+
+.products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 40px 20px;
+    background: white;
+}
+.product-card {
+    width: 240px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+.product-card:hover { transform: translateY(-5px); }
+.product-card img { width: 100%; height: 280px; object-fit: cover; }
+.product-info { padding: 15px; }
+.product-info h3 { font-size: 18px; margin-bottom: 8px; }
+.product-info p { font-size: 14px; color: #666; margin-bottom: 10px; }
+.price { font-size: 20px; font-weight: bold; color: #e91e63; }
+.old-price { font-size: 14px; text-decoration: line-through; color: #999; margin-left: 8px; }
+.buy-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background: #25d366;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+.buy-btn:hover { background: #1ebe5d; }
+footer { text-align: center; padding: 20px; background: #222; color: white; margin-top: 40px; }
+</style>
 </head>
 <body>
 
-    <h1>🍛 Sania Ka Dhaba 👑</h1>
-    <p class="tagline">Ghar jaisa khana, Maa jaisa pyaar ♡</p>
-    
-    <button id="menu-button" onclick="toggleMenu()">Menu Dekho 😋</button>
-    
-    <div id="menu-list">
-        <h2 style="text-align:center;">✨ Aaj Ka Khaas Menu ✨</h2>
-        
-        <!-- ITEM 1: BIRYANI -->
-        <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=200" alt="Biryani">
-            <div>
-                <p>Chicken Biryani</p>
-                <p class="price">200 Rs - Full Plate</p>
-            </div>
-        </div>
-        
-        <!-- ITEM 2: CHAI -->
-        <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=200" alt="Chai">
-            <div>
-                <p>Dhabe Wali Karak Chai</p>
-                <p class="price">30 Rs - Ek Cup</p>
-            </div>
-        </div>
-        
-        <!-- ITEM 3: ROTI -->
-        <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1626132647523-66f5bf380027?w=200" alt="Roti">
-            <div>
-                <p>Garam Tandoori Roti</p>
-                <p class="price">20 Rs - Ek Piece</p>
-            </div>
-        </div>
-        
-        <!-- ITEM 4: DAAL -->
-        <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=200" alt="Daal">
-            <div>
-                <p>Shahi Daal Fry</p>
-                <p class="price">150 Rs - Bowl</p>
-            </div>
-        </div>
-        
-        <!-- ITEM 5: SAMOSA -->
-        <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=200" alt="Samosa">
-            <div>
-                <p>Garam Garam Samosa</p>
-                <p class="price">40 Rs - 2 Piece</p>
-            </div>
-        </div>
+<header>
+    <h1>Trendify</h1>
+    <h2>Mega Sale</h2>
+    <p>Kurtis & Cosmetics at Best Prices</p>
+</header>
 
-        <!-- ITEM 6: PIZZA - NAYA ITEM -->
-        <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=200" alt="Pizza">
-            <div>
-                <p>Sania Special Pizza</p>
-                <p class="price">800 Rs - Large</p>
-            </div>
-        </div>
+<!-- COSMETICS SECTION -->
+<section class="section-banner cosmetics-banner">
+    <h2>Cosmetics Collection</h2>
+    <p>Branded & Imported Beauty Products</p>
+</section>
 
-        <!-- ITEM 7: BURGER - NAYA ITEM -->
-        <div class="menu-item">
-            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=200" alt="Burger">
-            <div>
-                <p>Zinger Burger</p>
-                <p class="price">350 Rs - With Fries</p>
-            </div>
-        </div>
-        
-        <!-- ORDER NOW BUTTON -->
-        <div style="text-align:center;">
-            <a href="https://wa.me/923233696100?text=Assalamualaikum%20Sania!%20Mujhe%20Dhabe%20se%20order%20karna%20hai%20🍛" 
-               target="_blank"
-               style="display: inline-block; 
-                      background-color: #25D366; 
-                      color: white; 
-                      padding: 12px 25px; 
-                      border-radius: 25px; 
-                      text-decoration: none; 
-                      font-weight: bold; 
-                      margin-top: 10px;
-                      font-size: 18px;">
-                Order Now on WhatsApp 📱
-            </a>
+<div class="products">
+    <div class="product-card">
+        <img src="cosmetic1.jpg" alt="Perfume">
+        <div class="product-info">
+            <h3>Branded Perfume</h3>
+            <p>Long lasting fragrance</p>
+            <span class="price">₹5,000</span>
+            <button class="buy-btn">Order on WhatsApp</button>
         </div>
     </div>
 
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("menu-list");
-            var button = document.getElementById("menu-button");
-            
-            if (menu.style.display === "none" || menu.style.display === "") {
-                menu.style.display = "block";
-                button.innerHTML = "Menu Band Karo 🙈";
-            } else {
-                menu.style.display = "none";
-                button.innerHTML = "Menu Dekho 😋";
-            }
-        }
-    </script>
+    <div class="product-card">
+        <img src="cosmetic2.jpg" alt="Perfume">
+        <div class="product-info">
+            <h3>Jana'n Perfume</h3>
+            <p>Branded & Imported, Long lasting</p>
+            <span class="price">₹8,000</span>
+            <button class="buy-btn">Order on WhatsApp</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="cosmetic3.jpg" alt="Eye Shadow">
+        <div class="product-info">
+            <h3>Rainbow Eye Shadow Palette</h3>
+            <p>Waterproof</p>
+            <span class="price">₹6,000</span>
+            <button class="buy-btn">Order on WhatsApp</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="cosmetic4.jpg" alt="Eye Shadow">
+        <div class="product-info">
+            <h3>Eye Shadow & Shimmer Palette</h3>
+            <p>Long lasting</p>
+            <span class="price">₹5,000</span>
+            <button class="buy-btn">Order on WhatsApp</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="cosmetic5.jpg" alt="Lipstick">
+        <div class="product-info">
+            <h3>Medora Lipsticks</h3>
+            <p>Matte, Each ₹800</p>
+            <span class="price">₹800</span>
+            <button class="buy-btn">Order on WhatsApp</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="cosmetic6.jpg" alt="Makeup Deal">
+        <div class="product-info">
+            <h3>Branded Makeup Deal</h3>
+            <p>Different makeups combo</p>
+            <span class="price">₹20,000</span>
+            <button class="buy-btn">Order on WhatsApp</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="cosmetic7.jpg" alt="Combo Deal">
+        <div class="product-info">
+            <h3>Perfume + Lipstick Deal</h3>
+            <p>Branded perfume & branded lipstick combo</p>
+            <span class="price">₹5,000</span>
+            <button class="buy-btn">Order on WhatsApp</button>
+        </div>
+    </div>
+</div>
+
+<!-- KURTIS SECTION -->
+<section class="section-banner kurtis-banner">
+    <h2>Kurtis Collection</h2>
+    <p>Soft, Comfortable & Stylish Kurtis</p>
+</section>
+
+<div class="products">
+    <div class="product-card">
+        <img src="kurti1.jpg" alt="Kurti 1">
+        <div class="product-info">
+            <h3>Cotton Printed Kurti</h3>
+            <p>Soft cotton, daily wear</p>
+            <span class="price">₹5,000</span>
+            <button class="buy-btn">Order on WhatsApp</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="kurti2.jpg" alt="Kurti 2">
+        <div class="product-info">
+            <h3>Rayon Embroidered Kurti</h3>
+            <p>Embroidered design</p>
+            <span class="price">₹4,000</span>
+            <button class="buy-btn">Order on WhatsApp</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="kurti3.jpg" alt="Kurti 3">
+        <div class="product-info">
+            <h3>Short Comfortable Kurti</h3>
+            <p>Soft cotton, comfortable fit</p>
+            <span class="price">₹2,000</span>
+            <button class="buy-btn">Order on WhatsApp</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="kurti4.jpg" alt="Kurti 4">
+        <div class="product-info">
+            <h3>Printed Cotton Kurti</h3>
+            <p>High quality fabric</p>
+            <span class="price">₹6,000</span>
+            <button class="buy-btn">Order on WhatsApp</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="kurti5.jpg" alt="Kurti 5">
+        <div class="product-info">
+            <h3>Short Light Wear Kurti</h3>
+            <p>Embroidered, light wear</p>
+            <span class="price">₹5,000</span>
+            <button class="buy-btn">Order on WhatsApp</button>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <img src="kurti6.jpg" alt="Kurti 6">
+        <div class="product-info">
+            <h3>Short Embroidered Kurti</h3>
+            <p>Soft wear, embroidered</p>
+            <span class="price">₹6,000</span>
+            <button class="buy-btn">Order on WhatsApp</button>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>© 2026 Trendify. All rights reserved.</p>
+</footer>
+
+<script>
+// WhatsApp Order Function - YAHAN APNA NUMBER DAALO
+const WHATSAPP_NUMBER = "+923120231522"; 
+
+document.querySelectorAll('.buy-btn').forEach(btn => {
+    btn.onclick = function() {
+        let card = this.closest('.product-card');
+        let name = card.querySelector('h3').innerText;
+        let price = card.querySelector('.price').innerText;
+        let msg = `Hi! I want to order:\n\n${name}\nPrice: ${price}\n\nPlease confirm availability.`;
+        window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+});
+</script>
 
 </body>
 </html>
